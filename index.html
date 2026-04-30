@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="assets/img/ujjLogo.png"
+      type="image/x-icon"
+    />
+    <!-- =============================== FONT AWESOME ============================= -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <!-- ============================= Email js =============================== -->
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        emailjs.init("ViRlWcpgdNc4pqhR6");
+      })();
+  
+      function sendMail(event) {
+        event.preventDefault(); // Prevent the default form submission
+  
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var subject = document.getElementById('subject').value;
+        var message = document.getElementById('message').value;
+  
+        var templateParams = {
+          from_name: name,
+          from_email: email,
+          subject: subject,
+          message: message
+        };
+  
+        emailjs.send('service_ax5dcqj', 'template_8rby70e', templateParams)
+          .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert('Message sent successfully!');
+          }, function(error) {
+            console.log('FAILED...', error);
+            alert('Failed to send message. Please try again later.');
+          });
+      }
+    </script>
+
+    <!-- =============================== CSS ============================= -->
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <title>Ujjwal's - Portfolio Website</title>
+  </head>
+  <body>
+    <!-- ============================== STYLE SWITCHER ==================================== -->
+
+    <input type="radio" name="color" id="color-1" />
+    <input type="radio" name="color" id="color-2" />
+    <input type="radio" name="color" id="color-3" />
+    <input type="radio" name="color" id="color-4" />
+    <input type="radio" name="color" id="color-5" />
+    <input type="radio" name="color" id="color-6" />
+    <input type="radio" name="color" id="color-7" />
+    <input type="radio" name="color" id="color-8" />
+    <input type="radio" name="color" id="color-9" />
+    <input type="radio" name="color" id="color-10" />
+    <input type="checkbox" id="toggler" />
+    <input type="checkbox" id="day-night" />
+
+    <div class="style__switcher">
+      <label for="toggler" class="style__switcher-toggler">
+        <i class="fa-solid fa-gear fa-spin"></i>
+      </label>
+
+      <label for="day-night" class="style__switcher-theme">
+        <i class="fa-solid fa-sun"></i>
+        <i class="fa-solid fa-moon"></i>
+      </label>
+
+      <h3 class="style__switcher-title">Theme Colors</h3>
+
+      <div class="style__switcher-colors">
+        <label for="color-1" class="color-1 color"></label>
+        <label for="color-2" class="color-2 color"></label>
+        <label for="color-3" class="color-3 color"></label>
+        <label for="color-4" class="color-4 color"></label>
+        <label for="color-5" class="color-5 color"></label>
+        <label for="color-6" class="color-6 color"></label>
+        <label for="color-7" class="color-7 color"></label>
+        <label for="color-8" class="color-8 color"></label>
+        <label for="color-9" class="color-9 color"></label>
+        <label for="color-10" class="color-10 color"></label>
+      </div>
+    </div>
+
+    <!-- ================================= HEADER ====================================== -->
+    <header class="header">
+      <nav class="nav container">
+        <a href="index.html" class="nav__logo"
+          ><i class="fa-solid fa-user-graduate"></i
+        > &nbsp; Ujjwal</a>
+
+        <input type="checkbox" id="nav-toggler">
+
+        <label for="nav-toggler" class="nav__toggle">
+          <i class="fa-solid fa-bars"></i>
+        </label>
+
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#home" class="nav__link active-link">Home</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#qualification" class="nav__link">Experience</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#services" class="nav__link">Services</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#works" class="nav__link">Portfolio</a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#contect" class="nav__link">Contect</a>
+          </li>
+        </ul>
+
+       
+      </nav>
+    </header>
+
+    <!-- ================================== MAIN =========================================== -->
+    <main class="main">
+      <!-- ================================= HOME  ======================================== -->
+      <section class="home" id="home">
+        <div class="home__container container grid">
+          <div class="home__content">
+            <span class="home__small">Hello</span>
+            <h1 class="home__title">
+              <span>I'm</span> Ujjwal Sharma <br />
+              <span>a Web Devloper</span>
+            </h1>
+
+            <p class="home__discription">
+              "Hi there, I'm Ujjwal Sharma, a web developer by day and a bug squasher by night. I build websites that even your grandma would love, unless she clicks on the ads!"
+            </p>
+            <div class="home__btns">
+              <a href="#contact" class="btn">Hire Me</a>
+              <a href="#works" class="btn btn__transparent">Portfolio</a>
+            </div>
+          </div>
+          <div class="home__img-wrapper">
+            <img src="assets/img/homeimg.png" alt="" class="home__img" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================= ABOUT  ======================================== -->
+      <section class="about section" id="about">
+        <div class="about__container container grid">
+          <div class="about__img-wrapper">
+            <img src="assets/img/aboutimg.jpg" alt="" class="about__img" />
+            <img src="assets/img/aboutimg.jpg" alt="" class="about__img" />
+            <img src="assets/img/aboutimg.jpg" alt="" class="about__img" />
+            <img src="assets/img/aboutimg.jpg" alt="" class="about__img" />
+          </div>
+          <div class="about__content">
+            <h2 class="section__title" data-title="Who Am i?">
+              I'm Ujjwal Sharma, a visual UI/UX Designer and Web Devloper
+            </h2>
+
+            <p class="about__discription">
+              "Hey there! I'm Ujjwal Sharma, a visual UI/UX designer and web developer. I create interfaces so smooth, they practically butter your toast, and code so clean, it makes Marie Kondo proud. When I'm not pixel-pushing or bug-squashing, I'm probably dreaming up ways to make the internet prettier!"
+            </p>
+
+            <ul class="about__data grid">
+              <li class="data__item">
+                <h3 class="data__title">Name:</h3>
+                <span class="data__discripition">Ujjwal Sharma</span>
+              </li>
+
+              <li class="data__item">
+                <h3 class="data__title">Age:</h3>
+                <span class="data__discripition">21 Years</span>
+              </li>
+
+              <li class="data__item">
+                <h3 class="data__title">From:</h3>
+                <span class="data__discripition">Simariya, Chatra</span>
+              </li>
+
+              <li class="data__item">
+                <h3 class="data__title">Email:</h3>
+                <span class="data__discripition about__link"
+                  >ujjwalsharmaayush@gmail.com</span
+                >
+              </li>
+            </ul>
+            <div class="about__bottom">
+              <a
+                href="assets/JSSC__Beena admit card.pdf" target="_blank"
+                download="Ujjwal Cv.pdf"
+                class="btn"
+                >Download Cv</a
+              >
+
+              <div class="about__social-links">
+                <a href="https://x.com/i/flow/login?redirect_after_login=%2FUjjwalS21423742" class="about__social-link" target="_blank">
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+
+                <a href="https://www.instagram.com/ram_bhakt_ujjwal0/" target="_blank"  class="about__social-link">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.facebook.com/people/Ujjwal-Sharma/pfbid0385MNc8SxYZp8MYjhEukvjZoZjGsqFmUh7nSs53Z5hvDX2sJ5MnQiWPVvjUhx1MRcl/?mibextid=YIjw0uDPbU8WYW2J" target="_blank" class="about__social-link">
+                  <i class="fa-brands fa-square-facebook"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQGXJdLHeBQ-lAAAAZBDn_2IldAVlNnzMzHOnzg91bEMFde41VVIlHQw7FHWy7YrpuGN5qcVVtUIWiDabaTdW_OXs_wlYiBh4gtnE5YV_TTwC9j6k21edw7jhZuBzpnAqN1U5e0=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fujjwal-sharma-1087a0264%3Futm_source%3Dshare%26utm_campaign%3Dshare_via%26utm_content%3Dprofile%26utm_medium%3Dandroid_app" class="about__social-link">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================= QUALIFICATION  ======================================== -->
+      <section class="qualification section" id="qualification">
+        <h2 class="section__title title-center" data-title="my journey">
+          Qualification
+        </h2>
+
+        <div class="resume__container container grid">
+          <div class="resume__group">
+            <h3 class="resume__heading">Education</h3>
+
+            <div class="resume__items">
+              <div class="resume__item">
+                <div class="resume_header">
+                  <h3 class="resume__subtitle">Graduate</h3>
+                  <span class="resume__icon">+</span>
+                </div>
+
+                <div class="resume__content">
+                  <div class="resume__date-title">
+                    <h3 class="resume__title">B.Sc Physics</h3>
+                    <span class="resume__date">2020 - 2023</span>
+                  </div>
+
+                  <p class="resume__description">
+                    I am graduating with a degree in Physics from Markham College of Commerce. Recently, I have developed a keen interest in programming and am eager to pursue opportunities in this field to further develop my skills.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="resume__items">
+              <div class="resume__item resume__itemm">
+                <div class="resume_header">
+                  <h3 class="resume__subtitle">Biyoans Pvt. Ltd</h3>
+                  <span class="resume__icon">-</span>
+                </div>
+
+                <div class="resume__content">
+                  <div class="resume__date-title">
+                    <h3 class="resume__title">Faculty of Design</h3>
+                    <span class="resume__date">2023 - 2024</span>
+                  </div>
+
+                  <p class="resume__description">
+                    I am studying UI/UX design at Biyoans Pvt. Ltd., gaining comprehensive skills in user interface and user experience design. This training equips me with the expertise to create intuitive and engaging digital experiences.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="resume__items">
+              <div class="resume__item resume__itemm">
+                <div class="resume_header">
+                  <h3 class="resume__subtitle">Biyoans Pvt. Ltd.</h3>
+                  <span class="resume__icon">+</span>
+                </div>
+
+                <div class="resume__content">
+                  <div class="resume__date-title">
+                    <h3 class="resume__title">Frontend Devlopment</h3>
+                    <span class="resume__date">2023 - 2024</span>
+                  </div>
+
+                  <p class="resume__description">
+                    I'm currently undergoing frontend development training at Biyoans Pvt. Ltd. The program emphasizes a systematic approach to building user interfaces, covering HTML, CSS, JavaScript, and responsive design techniques.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="resume__group">
+            <h3 class="resume__heading">Experience</h3>
+
+            <div class="resume__items">
+              <div class="resume__item">
+                <div class="resume_header">
+                  <h3 class="resume__subtitle">Web Devloper</h3>
+                  <span class="resume__icon">+</span>
+                </div>
+
+                <div class="resume__content">
+                  <div class="resume__date-title">
+                    <h3 class="resume__title">Biyoans Pvt. Ltd.</h3>
+                    <span class="resume__date">2020 - PRESENT</span>
+                  </div>
+
+                  <p class="resume__description">
+                    I have experience in frontend development, specializing in projects at Biyoans Pvt. Ltd. My skills include designing responsive user interfaces and collaborating effectively with teams to deliver exceptional user experiences.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="resume__items">
+              <div class="resume__item resume__itemm">
+                <div class="resume_header">
+                  <h3 class="resume__subtitle">UI/UX Designer</h3>
+                  <span class="resume__icon">-</span>
+                </div>
+
+                <div class="resume__content">
+                  <div class="resume__date-title">
+                    <h3 class="resume__title">Freelancer.</h3>
+                    <span class="resume__date">2023 - PRESENT</span>
+                  </div>
+
+                  <p class="resume__description">
+                    I have practical UI/UX design experience gained through freelance work. I excel in creating intuitive interfaces, conducting user research, and delivering compelling designs that enhance user satisfaction and engagement.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="resume__items">
+              <div class="resume__item resume__itemm">
+                <div class="resume_header">
+                  <h3 class="resume__subtitle">Graphic Designer</h3>
+                  <span class="resume__icon">+</span>
+                </div>
+
+                <div class="resume__content">
+                  <div class="resume__date-title">
+                    <h3 class="resume__title">Sapna Studio</h3>
+                    <span class="resume__date">2020 - 2023</span>
+                  </div>
+
+                  <p class="resume__description">
+                    I have experience in graphic design, honed while working in a studio environment. My expertise includes creating visual identities, digital and print designs, and collaborating effectively within creative teams to achieve project goals.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================= SERVISES  ======================================== -->
+      <section class="services section" id="services">
+        <h2 class="section__title title-center" data-title="Services">
+          What I do for you
+        </h2>
+
+        <div class="service__container container grid">
+          <div class="services__item">
+            <i class="fa-solid fa-pen-to-square services__icon"></i>
+            <h3 class="service__title">UI/UX Design</h3>
+
+            <p class="services__description">
+              I'm your UI/UX maestro! I'll jazz up your project with a design symphony that's as smooth as butter and as intuitive as your favorite app.
+            </p>
+
+            <span class="services__no">01</span>
+          </div>
+
+          <div class="services__item">
+            <i class="fa-solid fa-laptop services__icon"></i>
+            <h3 class="service__title">Web Devlopement</h3>
+
+            <p class="services__description">
+              I'm your web wizard! With my coding wand, I'll conjure up custom solutions that fit your needs like a perfectly tailored suit.
+            </p>
+
+            <span class="services__no">02</span>
+          </div>
+
+          <div class="services__item">
+            <i class="fa-solid fa-chart-area services__icon"></i>
+            <h3 class="service__title">Research & Analysis</h3>
+
+            <p class="services__description">
+              I've got ninja skills in research and analytics – I'll hunt down data faster than you can say 'Google it', and unravel insights that'll make Sherlock Holmes jealous!
+            </p>
+
+            <span class="services__no">03</span>
+          </div>
+
+          <div class="services__item">
+            <i class="fa-solid fa-swatchbook services__icon"></i>
+            <h3 class="service__title">Graphic Design</h3>
+
+            <p class="services__description">
+              I'm your go-to for graphic design—ready to splash some color, spin some magic, and turn your ideas into visual fireworks!
+            </p>
+
+            <span class="services__no">04</span>
+          </div>
+
+          <div class="services__item">
+            <i class="fa-solid fa-photo-film services__icon"></i>
+            <h3 class="service__title">Video Editing</h3>
+
+            <p class="services__description">
+              I bring the magic of video editing to your fingertips. Let's turn your raw footage into a polished masterpiece that will have your audience hitting 'replay'!
+            </p>
+
+            <span class="services__no">05</span>
+          </div>
+
+          <div class="services__item">
+            <i class="fa-solid fa-pen-fancy services__icon"></i>
+            <h3 class="service__title">Blog Writing</h3>
+
+            <p class="services__description">
+              Need vlogs that pop? I've got the write stuff! Let's craft stories that make your audience laugh, cry, and hit that 'subscribe' button faster than you can say 'action'!
+            </p>
+
+            <span class="services__no">06</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================= SKILLS  ======================================== -->
+      <section class="skills section" id="skills">
+        <h2 class="section__title title-center" data-title="My Talent">
+          Professional Skills
+        </h2>
+
+        <div class="skills__container container grid">
+          <div class="skills__item">
+            <div class="skills__titles">
+              <h3 class="skills__name">PHP</h3>
+              <span class="skills__no">20%</span>
+            </div>
+
+            <p class="skills__description">
+              I possess foundational knowledge in PHP programming, capable of handling basic scripting and web development tasks.
+            </p>
+
+            <div class="skills__bar">
+              <div class="skills__percentage" style="width: 20%">
+                <span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__titles">
+              <h3 class="skills__name">JavaScript</h3>
+              <span class="skills__no">25%</span>
+            </div>
+
+            <p class="skills__description">
+              I dabble in JavaScript wizardry—enough to sprinkle interactive magic on your web projects and bring smiles to users' faces!
+            </p>
+
+            <div class="skills__bar">
+              <div class="skills__percentage" style="width: 25%">
+                <span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__titles">
+              <h3 class="skills__name">WordPress</h3>
+              <span class="skills__no">90%</span>
+            </div>
+
+            <p class="skills__description">
+              I'm a WordPress guru, wielding extensive knowledge to create websites that shine brighter than a disco ball!......
+            </p>
+
+            <div class="skills__bar">
+              <div class="skills__percentage" style="width: 90%">
+                <span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__titles">
+              <h3 class="skills__name">Python</h3>
+              <span class="skills__no">45%</span>
+            </div>
+
+            <p class="skills__description">
+              I've dipped my toes into Python's waters, equipped to script clever solutions and automate tasks with a touch of flair.
+            </p>
+
+            <div class="skills__bar">
+              <div class="skills__percentage" style="width: 45%">
+                <span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__titles">
+              <h3 class="skills__name">HTML</h3>
+              <span class="skills__no">95%</span>
+            </div>
+
+            <p class="skills__description">
+              I've mastered HTML inside out—ready to craft web pages that are as solid as a rock and stylish as a runway extravaganza!
+            </p>
+
+            <div class="skills__bar">
+              <div class="skills__percentage" style="width: 95%">
+                <span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__titles">
+              <h3 class="skills__name">CSS</h3>
+              <span class="skills__no">85%</span>
+            </div>
+
+            <p class="skills__description">
+              I wield CSS expertise to create eye-catching web designs that not only grab attention but also mesmerize and delight users.
+            </p>
+
+            <div class="skills__bar">
+              <div class="skills__percentage" style="width: 85%">
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================= PORTFOLIO  ======================================== -->
+      <section class="works section" id="works">
+        <h2 class="section__title title-center" data-title="My Portfolio">
+          Recent Work
+        </h2>
+
+        <div class="work__container container grid">
+          <div class="work__cards">
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+              class="work__img"
+            />
+
+            <div class="work__details">
+              <h3 class="work__title">School Website</h3>
+              <span class="work__description">Quirky design that grabs attention instantly!</span>
+            </div>
+          </div>
+
+          <div class="work__cards">
+            <img
+              src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1720&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+              class="work__img"
+            />
+
+            <div class="work__details">
+              <h3 class="work__title">Portfolio Website</h3>
+              <span class="work__description">Showcasing my skills with style and humor!</span>
+            </div>
+          </div>
+
+          <div class="work__cards">
+            <img
+              src="https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+              class="work__img"
+            />
+
+            <div class="work__details">
+              <h3 class="work__title">Graphic Design</h3>
+              <span class="work__description">"Playful design that catches eyes and smiles."</span>
+            </div>
+          </div>
+
+          <div class="work__cards">
+            <img
+              src="https://images.unsplash.com/photo-1556442811-a6d34a973954?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+              class="work__img"
+            />
+
+            <div class="work__details">
+              <h3 class="work__title">Resturent Website</h3>
+              <span class="work__description">Delicious bites: Eat, repeat!</span>
+            </div>
+          </div>
+
+          <div class="work__cards">
+            <img
+              src="https://images.unsplash.com/photo-1613909207039-6b173b755cc1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fGdyYXBoaWMlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D"
+              alt=""
+              class="work__img"
+            />
+
+            <div class="work__details">
+              <h3 class="work__title">UI/UX Design</h3>
+              <span class="work__description">Vibrant Fun, Click Happy, Smile More!</span>
+            </div>
+          </div>
+
+          <div class="work__cards">
+            <img
+              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+              class="work__img"
+            />
+
+            <div class="work__details">
+              <h3 class="work__title">Ecommerce Website</h3>
+              <span class="work__description">Shop Till You Drop, Giggle & Save!</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================= TESTIMONIALS  ======================================== -->
+      <section class="testimonials section">
+        <h2 class="section__title title-center" data-title="testimonials">
+          What My Clint Say
+        </h2>
+
+        <div class="testimonials__container container grid">
+          <div class="testimonials__item">
+            <div class="testimonial_quote">
+              <i class="fa-solid fa-quote-left"></i>
+            </div>
+            <p class="testimonials__description">
+              Working with Ujjwal Sharma to develop my website was a fantastic experience. They delivered an attractive, user-friendly site that exceeded my expectations. Their creativity and attention to detail truly set them apart. I’m thrilled with the final product and highly recommend their services!
+            </p>
+
+            <div class="testimonials__data">
+              <img
+                src="assets/img/Gopal_sir.jpg"
+                alt=""
+                class="testimonials__img"
+              />
+
+              <div>
+                <h3 class="testimonials__name">Gopal Mishra</h3>
+                <span class="testimonial__identity"
+                  >Managment, Biyoans pvt. ltd.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonials__item">
+            <div class="testimonial_quote">
+              <i class="fa-solid fa-quote-left"></i>
+            </div>
+            <p class="testimonials__description">
+              Collaborating with Ujjwal Sharma on my portfolio website was an outstanding experience. They crafted a visually stunning and highly functional site that perfectly showcases my work. Their professionalism and expertise were evident throughout the process. I couldn't be happier with the result and strongly recommend their services!
+            </p>
+
+            <div class="testimonials__data">
+              <img
+                src="assets/img/aboutimg.jpg"
+                alt=""
+                class="testimonials__img"
+              />
+
+              <div>
+                <h3 class="testimonials__name">Ujjwal Sharma</h3>
+                <span class="testimonial__identity"
+                  >Student, Biyoans pvt. ltd.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================= CONTECT  ======================================== -->
+      <section class="contect section" id="contect">
+        <h2 class="section__title title-center" data-title="Get In Touch">
+          Contect Me
+        </h2>
+
+        <div class="contact__container container grid">
+          <div class="contact__detail">
+            <div class="contect__item">
+              <i class="fa-solid fa-phone contect__icon"></i>
+              <div>
+                <h3 class="contect__title">Call Us</h3>
+                <span class="contect__data">+91 9334790796</span>
+              </div>
+            </div>
+
+            <div class="contect__item">
+              <i class="fa-solid fa-envelope contect__icon"></i>
+              <div>
+                <h3 class="contect__title">Email Us</h3>
+                <span class="contect__data">ujjwalsharmaayush@gmail.com</span>
+              </div>
+            </div>
+
+            <div class="contect__item">
+              <i class="fa-solid fa-location-dot contect__icon"></i>
+              <div>
+                <h3 class="contect__title">Address</h3>
+                <span class="contect__data">Simariya, Chatra (825103)</span>
+              </div>
+            </div>
+          </div>
+
+          <form action="" class="contect__form" id="contact-form" onsubmit="sendMail(event)">
+            <div class="form__group">
+              <div class="form__input">
+                <input type="text" placeholder="Name" class="input__control" id="name" />
+              </div>
+              <div class="form__input">
+                <input type="email" id="email" placeholder="Email...." class="input__control" />
+              </div>
+            </div>
+            <div class="form__input">
+              <input type="text" placeholder="Subject" class="input__control" name="subject" id="subject" />
+            </div>
+            <div class="form__input">
+              <textarea name="message" id="message" placeholder="message" class="input__control textarea"></textarea>
+            </div>
+            <button type="submit" class="btn contect__btn">Send message</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ================================= FOOTER  ======================================== -->
+      <footer class="footer">
+        <div class="footer__container container">
+          <p class="footer__copyright">
+            &copy; 2023 Ujjwal Sharma. All Rights Reserved
+          </p>
+
+          <div class="footer__social-links">
+            <a href="https://x.com/i/flow/login?redirect_after_login=%2FUjjwalS21423742" target="_blank" class="footer__social-link">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+
+            <a href="https://www.instagram.com/ram_bhakt_ujjwal0/" target="_blank" class="footer__social-link">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://www.facebook.com/people/Ujjwal-Sharma/pfbid0385MNc8SxYZp8MYjhEukvjZoZjGsqFmUh7nSs53Z5hvDX2sJ5MnQiWPVvjUhx1MRcl/?mibextid=YIjw0uDPbU8WYW2J" target="_blank" class="footer__social-link">
+              <i class="fa-brands fa-square-facebook"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQGXJdLHeBQ-lAAAAZBDn_2IldAVlNnzMzHOnzg91bEMFde41VVIlHQw7FHWy7YrpuGN5qcVVtUIWiDabaTdW_OXs_wlYiBh4gtnE5YV_TTwC9j6k21edw7jhZuBzpnAqN1U5e0=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fujjwal-sharma-1087a0264%3Futm_source%3Dshare%26utm_campaign%3Dshare_via%26utm_content%3Dprofile%26utm_medium%3Dandroid_app" target="_blank" class="footer__social-link">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
