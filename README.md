@@ -1,4 +1,4 @@
-<h1 align="center">🕰️ The Genesis: Ujjwal's V1 Portfolio</h1>
+<h1 align="center">🕰️ The Genesis: Ujjwal's Portfolio</h1>
 
 <p align="center">
   <strong>Every elite developer has an origin story. This is a look back at my early days of crafting premium dark-mode web experiences.</strong>
@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://stackbyujjwal.github.io/portfolio">
-    <img src="https://img.shields.io/badge/View_V1_Live-%238A2BE2?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
+    <img src="https://img.shields.io/badge/View_Portfolio_Live-%238A2BE2?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
   </a>
 </p>
 
