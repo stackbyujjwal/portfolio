@@ -1200,24 +1200,37 @@ align-items: center;
 
 }
 
+/* ======================== TOAST NOTIFICATION ======================== */
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #0f172a; /* Deep dark blue/black */
+  color: #f8fafc;
+  text-align: center;
+  border-radius: 8px;
+  padding: 16px 20px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid #334155;
+  opacity: 0;
+  transition: opacity 0.3s, bottom 0.3s;
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 40px; /* Slight slide up animation */
+}
+
+/* Side borders for different states */
+.toast.success { border-left: 4px solid #10b981; } /* Green */
+.toast.info { border-left: 4px solid #3b82f6; } /* Blue */
+.toast.error { border-left: 4px solid #ef4444; } /* Red */
    
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
